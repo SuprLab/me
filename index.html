@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me - Your All-in-One Personal Growth App</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #268bd2; /* Blue */
+            --secondary-color: #fdf6e3; /* Base3 */
+            --text-color: #657b83; /* Base00 */
+            --background-color: #eee8d5; /* Base2 */
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #268bd2; /* Blue */
+            --secondary-color: #002b36; /* Base03 */
+            --text-color: #839496; /* Base0 */
+            --background-color: #073642; /* Base02 */
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .feature {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .feature {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .discover-yourself {
+            background-color: var(--secondary-color);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        [data-theme="dark"] .discover-yourself {
+            background-color: var(--secondary-color);
+        }
+        
+        .discover-yourself h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #2aa198; /* Cyan for hover */
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-color);
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .github-link:hover {
+            color: #2aa198; /* Cyan for hover */
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Me</h1>
+            <p class="subtitle">by SuprLab</p>
+            <p>Your all-in-one platform for self-discovery, improvement, and productivity</p>
+        </header>
+
+        <div class="features">
+            <div class="feature">
+                <h2>Portfolio</h2>
+                <p>Create a stunning portfolio with custom domain support</p>
+            </div>
+            <div class="feature">
+                <h2>Tasks & Habits</h2>
+                <p>Manage tasks and track habits effortlessly</p>
+            </div>
+            <div class="feature">
+                <h2>Journaling</h2>
+                <p>Reflect daily with mood tracking and prompts</p>
+            </div>
+            <div class="feature">
+                <h2>Notes</h2>
+                <p>Capture ideas with rich text formatting</p>
+            </div>
+        </div>
+
+        <div class="discover-yourself">
+            <h2>Discover Yourself</h2>
+            <p>Embark on a journey of self-discovery with our comprehensive tools inspired by Stoic principles. "Me" provides you with a structured approach to understanding your thoughts, habits, and goals, helping you become the best version of yourself.</p>
+        </div>
+
+        <div class="cta">
+            <a href="#" class="cta-button">Start Your Journey</a>
+            <br>
+            <a href="https://github.com/yourusername/me-by-suprlab" class="github-link" target="_blank">View on GitHub</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 SuprLab. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        document.body.setAttribute('data-theme', currentTheme);
+        themeToggle.innerHTML = currentTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>
